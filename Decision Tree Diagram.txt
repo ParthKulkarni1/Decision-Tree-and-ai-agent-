@@ -1,0 +1,46 @@
+Employee Attrition Risk
+Job Satisfaction (High / Medium / Low)
+Salary (High / Low)
+Years at Company
+Overtime (Yes / No)
+
+Start
+│
+├── Job Satisfaction = Low?
+│   ├── Yes
+│   │    ├── Overtime = Yes?
+│   │    │     ├── Yes → High Attrition Risk ❌
+│   │    │     └── No
+│   │    │          ├── Salary = Low?
+│   │    │          │     ├── Yes → High Attrition Risk ❌
+│   │    │          │     └── No → Medium Risk ⚠️
+│   │
+│   └── No
+│        │
+│        ├── Years at Company < 2?
+│        │     ├── Yes → Medium Risk ⚠️
+│        │     └── No
+│        │          ├── Salary = High?
+│        │          │     ├── Yes → Low Risk ✅
+│        │          │     └── No → Medium Risk ⚠️
+
+
+Customer Purchase Decision
+Inputs:
+Age
+Income
+Previous Purchase (Yes/No)
+
+Start
+│
+├── Has Previous Purchase?
+│   ├── Yes → Target Customer ✅
+│   └── No
+│        │
+│        ├── Income > 50,000?
+│        │     ├── Yes → Target Customer ✅
+│        │     └── No
+│        │          │
+│        │          ├── Age < 25?
+│        │          │     ├── Yes → Not Target ❌
+│        │          │     └── No → Maybe Target ⚠️
